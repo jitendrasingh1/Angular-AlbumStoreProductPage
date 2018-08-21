@@ -13,14 +13,10 @@ export class ProductService {
   constructor(private _http: Http) { }
 
   getAlbum (id: number) : Observable<Album> {
-    return this._http.get(this._albumUrl).map( (response) => {
-      return <Album> response.json() as Album;
-    });
-  }
+    return this._http.get(this._albumUrl).map( (response) => <Album> response.json());
+ }
 
   getProducts () : Observable<Product[]> {
-    return this._http.get(this._productsUrl).map( (response) => {
-      return <Product[]> response.json() as Product[];
-    });
+    return this._http.get(this._productsUrl).map( response => <Product []>response.json());
   }
 }
