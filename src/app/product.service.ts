@@ -10,9 +10,9 @@ export class ProductService {
   private _albumUrl: "../assets/album.json"
   constructor(private _http: Http) { }
 
-  getAlbum (id: Number) : Observable<Album> {
-    return this._http.get(this._albumUrl).map( (response) => {
-      return <Album> response.json();
+  getAlbum (id: number) : Observable<Album> {
+    return  this._http.get(this._albumUrl).map( (response) => {
+      return response.json() as Album;
     });
   }
 }
